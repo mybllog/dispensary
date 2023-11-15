@@ -1,0 +1,37 @@
+extends layout 
+
+block content
+    Section()    
+        nav(class="navbar")
+            
+            if message 
+                div(class="message-box")
+                    strong  #{message}
+                    button(type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close")
+            
+            table(class="table")
+                thead(class="table-dark")
+                    tr 
+                    th(scope="col") #
+                    th(scope="col") Name
+                    th(scope="col") Lastname
+                    th(scope="col") School Id
+                    th(scope="col") Mail
+                    th(scope="col") Role
+                    th(scope="col" class="text-end")
+                tbody 
+                each result, i in results
+                    tr
+                    th(scope="row") #{result.id}
+                    td #{result.name}
+                    td #{result.lastName}
+                    td #{result.schoolId}
+                    td #{result.mail}
+                    td #{result.role}
+                    td( class="text-end")
+                        a(href="#" type="button" class="btn btn-light btn-small") View
+                            i(class="bi bi-eye") 
+                        a(href="#" type="button" class="btn btn-light btn-small") Edit
+                            i(class="bi bi-pencil")
+                        a(href="#" type="button" class="btn btn-light btn-small") Delete
+                            i(class="bi bi-trash")  

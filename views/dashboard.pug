@@ -1,0 +1,37 @@
+extends layout 
+
+block content
+    section(class="dashboard" id="dashboard")    
+        
+        if message 
+                div(class="message-box")
+                    strong  #{message}
+                    button(type="button" class="")
+
+        div(class="box-container")
+
+            div(class="box")
+                i(class="")
+                h3() Add User
+                a(href="/addUser" class="btn") Add Users
+                    span(class="fas fa-chevron-right")             
+            
+            div(class="box")
+                i(class="")
+                h3() Users
+                a(href="/users" class="btn") View Users
+                    span(class="fas fa-chevron-right")             
+            
+            div(class="box")
+                i(class="")
+                h3() Register
+                a(href="/rooms" class="btn") View Registered
+                    span(class="fas fa-chevron-right")             
+            
+            
+            
+        
+    
+            
+ 
+                

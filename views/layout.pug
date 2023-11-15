@@ -1,0 +1,39 @@
+doctype html()
+html(lang="en")
+
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/style.css")
+        link(rel="stylesheet", href="/all.css")
+        title MTU Health Centre Dispensary
+            
+    body()
+        header(class="header")
+
+            
+            a(href="/" class="logo")
+                nav()
+                    img(src="images/logo.png", alt="", srcset="" height="10%" width="10%")
+                    h4() MTU Health Centre Dispensary
+            
+            nav(class="navbar")
+                a(href="/login") Login
+                if Role = ("Admin")
+                    a(href="/dashboard") Dashboard
+                a(href="/register") Register Drugs
+                a(href="/order") Order
+                a(href="/logout") Logout
+
+            div(id="menu-btn" class="fas fa-bars")
+  
+        
+        block content
+                
+        footer(class="foot" )
+            a()      
+                p © Mountain Top University 2022
+
+        script(src="/all.js")
+        script(src="/script.js")

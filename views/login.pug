@@ -1,0 +1,22 @@
+extends layout 
+
+block content
+    section(class="forms" id="forms")
+
+    div(class="container mt-4")
+        if message 
+            div(class="alert alert-warning alert-dismissible fade show" role="alert")
+                strong  #{message}
+                button(type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close")
+        
+        div(class="form-container")
+            h1() Login
+            form(action="/auth/login", method="POST")
+                div(class="control")
+                    label( for="email" ) Email
+                    input(type="email" id="email" name="email") 
+                div(class="control")
+                    label( for="password" ) Password
+                    input(type="password" id="password" name="password")
+                div(class="control")
+                    input(type="submit" value="Login")

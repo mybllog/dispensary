@@ -1,0 +1,51 @@
+extends layout 
+
+block content
+    nav(class="navbar")
+        div(class="container fluid")
+            h4 BlueChip Offices
+            ul
+                li 
+                    a(href="/") Home
+                li 
+                    a(href="/dashboard") Dashboard
+                li 
+                    a(href="/rooms") View Rooms
+                li 
+                    a(href="/auth/logout") Logout
+    
+    div(class="container mt-4")
+        if message 
+            div(class="alert alert-warning alert-dismissible fade show" role="alert")
+                strong  #{message}
+                button(type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close")
+    
+        div(class="card")
+            div(class="card-header") Book Room
+            div(class="card-body")
+                form(class="row g-3" action="/auth/bookRoom", method="POST")
+                    div(class="col-6")
+                        label( for="roomId" class="input-group-text") Rooms
+                        select(class="form-select" id="roomId" name="roomId" required)
+                            option(value="" disabled selected) Choose Room...
+                            option(value="1" ) CONFERENCE ROOM I
+                            option(value="2" ) CONFERENCE ROOM II
+                            option(value="3") TRAINING ROOM 
+                            option(value="4" ) MEETING ROOM I
+                            option(value="5" ) MEETING ROOM II
+                    div(class="col-6")                        
+                        label( for="purpose" class="form-label") Purpose
+                        input(type="text" class="form-control" id="purpose" name="purpose" required) 
+                    div(class="col-6")
+                        label( for="bookingDate" class="form-label") Booking Date
+                        input( type="date" class="form-control" id="bookingDate" name="bookingDate" required)
+                    div(class="col-3")
+                        label( for="bookingTimeFrom" class="form-label") Booking Time: From
+                        input( type="time" class="form-control" id="bookingTimeFrom" name="bookingTimeFrom" required)
+                    div(class="col-3")
+                        label( for="bookingTimeTo" class="form-label") Booking Time: To
+                        input( type="time" class="form-control" id="bookingTimeTo" name="bookingTimeTo" required)
+                    //-div(class="col-6")
+                    button(type="submit" class="btn btn-primary") Book Room
+                        
+                          

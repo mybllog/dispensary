@@ -1,0 +1,41 @@
+extends layout 
+
+block content
+    section(class="forms" id="forms")
+        
+        div(class="form-container")
+            h1() Add Users
+            form(action="/auth/addUser", method="POST")
+                div(class="control")
+                    
+                    input(type="text" placeholder="name" class="box" id="name" name="name" required)
+                div(class="control")
+                    
+                    input(type="text" placeholder="last name" class="box" id="lastName" name="lastName" )
+                div(class="control")
+                    
+                    input(type="text" placeholder="other name" class="box" id="otherName" name="otherName" )
+                div(class="control")
+                    
+                    input(type="varchar" placeholder="matric number" id="schoolId" name="schoolId" class="box" required)
+                div(class="control")
+
+                    input(type="email" placeholder="email" class="box" id="mail" name="mail" required)  
+                div(class="control")
+
+                    input(type="password" placeholder="password" class="box" id="password" name="password" required)
+                div(class="control")
+
+                    select(class="box" id="role" name="role" required)
+                        option(value="" disabled selected) Assign Role...
+                        option(value="Admin" ) Admin
+                        option(value="Staff" ) Staff
+                        option(value="Student") Student 
+                div(class="control")
+                    input(type="submit" Value="Sign Up")
+
+                if message 
+                    div(class="message-box" role="alert")
+                        strong  #{message}
+                        a(href="/addUser" class="btn") try again
+                            span(class="fas fa-chevron-right") 
